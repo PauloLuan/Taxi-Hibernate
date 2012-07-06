@@ -1,0 +1,54 @@
+package br.com.taxi.view;
+
+import br.com.taxi.hibernate.HibernateUtil;
+import br.com.taxi.model.Funcionario;
+import br.com.taxi.model.Veiculo;
+import br.com.taxi.model.dao.FuncionarioDAO;
+import br.com.taxi.model.dao.VeiculoDAO;
+
+public class Main {
+
+	/**
+	 * @author PauloLuan
+	 */
+	public static void criaTabelaNoBD() {
+
+		try {
+			HibernateUtil util = new HibernateUtil();
+			util.criaTabelaNoBD();
+			System.out.println("Tabelas Criadas no BD!");
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Erro ao Criar tabelas Criadas no BD!");
+		}
+
+		// Criação de alguns Funcionarios e carros para teste.
+		FuncionarioDAO dao = new FuncionarioDAO();
+
+		for (int i = 1; i < 11; i++) {
+			Funcionario func = new Funcionario();
+			func.setBairro("Bairro do Funcionario " + i);
+			func.setCep("12000" + i);
+			func.setCidade("Cidade do Func " + i);
+			func.setEndereco("Rua do Funcionario " + i);
+			func.setEstado("SP");
+			func.setNome("Funcionario " + i);
+			func.setNumero("00" + i);
+			func.setTelefone("3900-" + i + "" + i + "" + i + "" + i);
+			dao.SalvarFuncionario(func);
+		}
+
+		VeiculoDAO veicDao = new VeiculoDAO();
+
+		for (int i = 1; i < 11; i++) {
+			Veiculo veic = new Veiculo();
+			veic.setAno(2011);
+			veic.setCor("Prata");
+			veic.setMarca("Marca " + i + "" + i + "" + i + "" + i);
+			veic.setPlaca("car000" + i);
+			veic.setTipo("Carro");
+			veicDao.SalvarVeiculo(veic);
+		}
+
+	}
+}

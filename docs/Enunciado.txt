@@ -1,0 +1,14 @@
+Aplicações para Bancos de dados. (Julho de 2012)
+Professor Reinal Arakaki.
+
+
+Vc é dono de umaFrota de Taxi, possuindo n veículos e n motoristas. 
+Vc deseja cadastrar os veículos (tipo, marca, ano, placa, cor) e os
+motoristas (nome, endereco, telefone, registro). 
+Quanto um motorista chega a sua empresa ele escolhe um veículo e sai e no final do dia
+retorna. Vc deve registrar esta ocorrência sabendo que veículo ele 
+pegou, quem pegou, que dia e hora ele pegou e devolveu ou se já 
+devolveu ou não juntamente com km inicial e o km final. Deverão 
+ter abas indicando (motoristas, veículos, moto-veic).
+
+Uso obrigatório de Hibernate e tabelas (JTable)
